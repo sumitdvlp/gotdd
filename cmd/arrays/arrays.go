@@ -8,12 +8,22 @@ func Sum(arr []int) (sum int) {
 }
 
 func SumAll(arr ...[]int) []int {
-	lenarr := len(arr)
-	sums := make([]int, lenarr)
+	var sums []int
 
-	for i, num := range arr {
-		println(num)
-		sums[i] = Sum(num)
+	for _, num := range arr {
+		sums = append(sums, Sum(num))
 	}
+
+	return sums
+}
+
+func SumAllTails(arr ...[]int) []int {
+	var sums []int
+
+	for _, num := range arr {
+		trail := num[1:]
+		sums = append(sums, Sum(trail))
+	}
+
 	return sums
 }
