@@ -27,3 +27,7 @@ func (rec Rectangle) Area() float64 {
 func (cir Circle) Area() float64 {
 	return math.Pi * cir.radius * cir.radius
 }
+
+func (cir Circle) Perimeter() float64 {
+	return 2 * math.Pi * cir.radius
+}
